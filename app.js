@@ -1,10 +1,9 @@
 var express = require('express');
 var app = express();
-
+const queryString = require('query-string');
 app.get('/', function(req, res) {
-  res.send({
-    "token": req.headers
-  });
+const parsedHash = queryString.parse(location.hash);
+  res.send(parsedHash);
 });
 
 app.post('/', function(req, res) {
