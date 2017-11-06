@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 const queryString = require('query-string');
 app.get('/', function(req, res) {
-const parsedHash = queryString.parse(location.hash);
+const parsedHash = queryString.parse(req.location.hash);
   res.send(parsedHash);
 });
 
