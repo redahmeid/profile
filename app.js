@@ -3,7 +3,7 @@ var app = express();
 
 app.get('/', function(req, res) {
   res.send({
-    "token": req.query.id_token
+    "token": req.query.access_token
   });
 });
 
