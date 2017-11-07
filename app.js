@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 const queryString = require('query-string');
 app.get('/', function(req, res) {
-const parsedHash = queryString.parse(req.location.hash);
  res.sendFile(__dirname + '/profile.html'); 
 });
 
