@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 const queryString = require('query-string');
-app.get('/', function(req, res) {
+app.get('/profile', function(req, res) {
  res.sendFile(__dirname + '/profile.html'); 
 });
 
