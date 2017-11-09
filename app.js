@@ -1,13 +1,22 @@
 var express = require('express');
 var app = express();
 const queryString = require('query-string');
-app.get('/profile', function(req, res) {
- res.sendFile(__dirname + '/profile.html'); 
+app.get('/login', function(req, res) {
+ res.sendFile(__dirname + '/login.html'); 
 });
+
+
+
+app.get('/profile', function(req, res) {
+res.send({
+    "Output": req.query.token
+  });
+});
+
 
 app.post('/', function(req, res) {
   res.send({
-    "Output": "Hello World!"
+    "Output": req.query.token 
   });
 });
 
