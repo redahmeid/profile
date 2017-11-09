@@ -23,7 +23,7 @@ Resources:
           Properties:
             Path: /
             Method: get
-       Profile:
+        Profile:
           Type: Api
           Properties:
             Path: /home
