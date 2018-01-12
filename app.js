@@ -30,7 +30,7 @@ app.post('/',function(req,res){
   const authenticationDetails = new CognitoSDK.AuthenticationDetails(authenticationData);
 
   user.authenticateUser(authenticationDetails, {
-    onSuccess: result => req.send(result),
+    onSuccess: result => console.log(result),
     onFailure: err => console.log(err)
   })
 

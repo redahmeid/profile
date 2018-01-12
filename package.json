@@ -7,6 +7,7 @@
         "express": "latest",
         "aws-serverless-express": "latest",
         "amazon-cognito-identity-js": "latest",
-	"query-string": "latest"
+        "aws-sdk": "latest",
+        "query-string": "latest"
     }
 }
