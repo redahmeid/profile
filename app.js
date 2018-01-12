@@ -20,7 +20,7 @@ app.get('/', function(req, res) {
 res.sendFile(__dirname + '/index.html');
 });
 
-app.post('/',function(req,res){
+app.post('/profile',function(req,res){
   const userPool = new CognitoSDK.CognitoUserPool({
     UserPoolId: "us-east-1_DHdw9WBmW",
     ClientId: "77s8qvi05mjegegfsbb6n7aid0"
