@@ -25,8 +25,8 @@ app.post('/profile',function(req,res){
     UserPoolId: "us-east-1_DHdw9WBmW",
     ClientId: "77s8qvi05mjegegfsbb6n7aid0"
   });
-  const user = CognitoSDK.CognitoUser({ req.body.email, userPool });
-  const authenticationData = { req.body.email, req.body.password };
+  const user = CognitoSDK.CognitoUser({ 'reda@redahmeid.com', userPool });
+  const authenticationData = { 'reda@redahmeid.com', 'Socrat3s' };
   const authenticationDetails = CognitoSDK.AuthenticationDetails(authenticationData);
 
   user.authenticateUser(authenticationDetails, {
