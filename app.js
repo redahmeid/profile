@@ -1,8 +1,10 @@
 var express = require('express');
+var AWS = require('aws-sdk');
+var CognitoSDK = require('amazon-cognito-identity-js-node');
 var app = express();
 const queryString = require('query-string');
 app.get('/profile', function(req, res) {
- res.sendFile(__dirname + '/login.html'); 
+ res.sendFile(__dirname + '/login.html');
 });
 
 
@@ -17,6 +19,22 @@ res.send({
 app.get('/', function(req, res) {
 res.sendFile(__dirname + '/index.html');
 });
+
+app.post('/',function(req,res){
+  const userPool = new CognitoSDK.CognitoUserPool({
+    UserPoolId: "us-east-1_DHdw9WBmW",
+    ClientId: "77s8qvi05mjegegfsbb6n7aid0"
+  });
+  const user = new CognitoSDK.CognitoUser({ req.body.email, userPool });
+  const authenticationData = { req.body.email, req.body.password };
+  const authenticationDetails = new CognitoSDK.AuthenticationDetails(authenticationData);
+
+  user.authenticateUser(authenticationDetails, {
+    onSuccess: result => req.send(result),
+    onFailure: err => console.log(err)
+  })
+
+})
 
 
 

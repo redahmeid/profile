@@ -28,3 +28,8 @@ Resources:
           Properties:
             Path: /home
             Method: get
+        Auth:
+          Type: Api
+          Properties:
+            Path: /
+            Method: post
