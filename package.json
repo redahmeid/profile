@@ -6,8 +6,8 @@
     "dependencies": {
         "express": "latest",
         "aws-serverless-express": "latest",
-        "amazon-cognito-identity-js-node": "latest",
-        "aws-sdk": "latest",
+        "auth0": "latest",
+        "body-parser": "latest",
         "query-string": "latest"
     }
 }
