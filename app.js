@@ -1,5 +1,5 @@
 var express = require('express');
-
+var cognito = require('amazon-cognito-identity-js');
 
 var app = express();
 
@@ -18,7 +18,14 @@ res.send({
 
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
+    cognito.AWSCognito.config.region = 'us-east-1'; //This is required to derive the endpoint
+
+    var poolData = { UserPoolId : 'us-east-1_TcoKGbf7n',
+        ClientId : '4pe2usejqcdmhi0a25jp4b5sh3'
+    };
+    var userPool = new cognito.AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
+    const cognitoUser = userPool.getCurrentUser();
+    console.log(cognitoUser);
 });
 
 

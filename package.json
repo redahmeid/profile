@@ -5,6 +5,7 @@
     "private": true,
     "dependencies": {
         "express": "latest",
+        "amazon-cognito-identity-js": "^1.19.0",
         "aws-serverless-express": "latest"
     }
 }
