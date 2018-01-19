@@ -31,5 +31,5 @@ Resources:
         Auth:
           Type: Api
           Properties:
-            Path: /
-            Method: post
+            Path: /auth
+            Method: get

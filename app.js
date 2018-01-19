@@ -17,7 +17,7 @@ res.send({
 });
 
 
-app.get('/', function(req, res) {
+app.get('/profile/auth', function(req, res) {
     cognito.AWSCognito.config.region = 'us-east-1'; //This is required to derive the endpoint
 
     var poolData = { UserPoolId : 'us-east-1_TcoKGbf7n',
